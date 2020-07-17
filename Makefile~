@@ -1,0 +1,7 @@
+
+
+
+
+CLONE_CMD=git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/
+
+LIBS=sky130_fd_sc_hdll
