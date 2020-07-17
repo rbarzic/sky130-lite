@@ -34,6 +34,7 @@ endef
 
 define clean_lib
 	rm -Rf $(1)/.git
+	rm -Rf $(1)/.gitignore
 	find $(1) -name "*.lib.json" | xargs rm -f
 	find $(1) -name "*.svg" | xargs rm -f
 endef
