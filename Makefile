@@ -30,7 +30,10 @@ define create_timing
 	./scripts/./create_timing.py $(1) $(CORNERS)
 endef
 
-
+define create_lef
+	mkdir -p $(1)/lef
+	./scripts/merge_lef.py --sourcedir $(1)/cells  --destdir ./$(1)/lef --libname $(1)
+endef
 
 define clean_lib
 	rm -Rf $(1)/.git
@@ -48,5 +51,7 @@ create:
 timing:
 	$(foreach LIB,$(LIBS), $(call create_timing,$(LIB)); )
 
+lef:
+	$(foreach LIB,$(LIBS), $(call create_lef,$(LIB)); )	
 cleanup:
 	$(foreach LIB,$(LIBS), $(call clean_lib,$(LIB)); )	
