@@ -40,6 +40,7 @@ define clean_lib
 	rm -Rf $(1)/.gitignore
 	find $(1) -name "*.lib.json" | xargs rm -f
 	find $(1) -name "*.svg" | xargs rm -f
+	find $(1)/cells -name "*.lef" | xargs rm -f
 endef
 
 
